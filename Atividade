@@ -1,0 +1,47 @@
+1.
+
+Ele faz uma consulta relacionando duas tabelas retornando todos os registros da primeira tabela mesmo que seja nulo na segunda
+
+2.
+
+Pode retornar registros apesar de nulos, isso pode ser tanto bom quanto ruim, pois a consulta pode acabar ficando
+muito grande e afetando o desempenho e acabar precisando de certos tratamentos para lidar com isso, 
+Mas por outro lado ele ajuda a nao ter tantas perdas de informações e ter um analise mais completa dos dados.
+
+3.
+select *
+from cliente
+
+4.
+
+select cliente.nome, loja.valor
+from cliente
+LEFT join loja
+on cliente.id_cliente = loja.id_cliente
+order by loja.valor asc 
+
+5.
+
+select cliente.nome
+from cliente
+ORDER BY cliente.nome
+
+6.
+
+select cliente.nome, loja.valor
+from cliente
+LEFT join loja
+on cliente.id_cliente = loja.id_cliente
+order by loja.valor DESC
+LIMIT 1
+
+7.
+
+select cliente.nome, cliente.idade
+from cliente
+order by cliente.idade desc
+LIMIT 5
+
+8.
+
+O inner Join ele so retorna os registros que estão preenchidos em ambas as tabelas, o Join Left permite mesmo que na segunda tabela possua um registro nao preenchido, nulo, ele retorne mesmo assim.
